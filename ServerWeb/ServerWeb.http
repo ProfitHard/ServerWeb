@@ -1,0 +1,10 @@
+@ServerWeb_HostAddress = http://localhost:5162
+
+GET {{ServerWeb_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+GET {{ServerWeb_HostAddress}}/User/
+Accept: application/json
+
+###
