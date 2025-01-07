@@ -19,5 +19,9 @@ namespace ServerWeb.BLL.Models
         public int UserId { get; set; } // Внешний ключ для пользователя
         [ForeignKey("UserId")]
         public User Uploader { get; set; } // Навигационное свойство для связи с пользователем
+                                           // Навигационное свойство для связи с комментариями
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
+        // Навигационное свойство для лайков
+        public ICollection<Like> Likes { get; set; } = new List<Like>();
     }
 }
