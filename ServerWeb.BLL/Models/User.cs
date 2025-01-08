@@ -25,6 +25,8 @@ namespace ServerWeb.BLL.Models
         public ICollection<Video> UploadedVideos { get; set; } = new List<Video>();
         [Required]
         public string PasswordHash { get; set; }
+        public ICollection<Message> SentMessages { get; set; } = new List<Message>(); // Отправленные сообщения
+        public ICollection<Message> ReceivedMessages { get; set; } = new List<Message>(); // Полученные сообщения
 
     }
 }

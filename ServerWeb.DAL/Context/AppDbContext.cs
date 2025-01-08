@@ -15,6 +15,7 @@ namespace ServerWeb.DAL.Context
         public DbSet<Like> Likes { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Video> Videos { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -98,6 +99,20 @@ namespace ServerWeb.DAL.Context
                 .WithOne(v => v.Uploader)
                 .HasForeignKey(v => v.UserId)
                  .OnDelete(DeleteBehavior.Cascade);
+
+            // User - Message (отправитель сообщений)
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.SentMessages)
+                .WithOne(m => m.Sender)
+                .HasForeignKey(m => m.SenderId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // User - Message (получатель сообщений)
+            modelBuilder.Entity<User>()
+                 .HasMany(u => u.ReceivedMessages)
+                .WithOne(m => m.Receiver)
+                .HasForeignKey(m => m.ReceiverId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
             ConfigureEntities(modelBuilder);
