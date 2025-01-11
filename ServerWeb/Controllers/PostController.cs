@@ -95,6 +95,7 @@ namespace ServerWeb.Controllers
                 Content = request.Content,
                 CreatedAt = DateTime.Now,
                 UserId = user.Id,
+                AuthorId = user.Id
             };
 
             _context.Posts.Add(post);

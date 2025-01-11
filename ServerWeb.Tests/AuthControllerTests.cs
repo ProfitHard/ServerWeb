@@ -14,7 +14,7 @@ namespace ServerWeb.Tests
 {
     public class AuthControllerTests
     {
-        private Mock<IConfiguration> _configurationMock = new Mock<IConfiguration>();
+        private Mock<Microsoft.Extensions.Configuration.IConfiguration> _configurationMock = new Mock<Microsoft.Extensions.Configuration.IConfiguration>();
         [Fact]
         public async Task Register_ValidRequest_ReturnsCreatedResult()
         {

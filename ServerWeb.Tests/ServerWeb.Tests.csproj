@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ServerWeb.DAL\ServerWeb.DAL.csproj" />
-    <ProjectReference Include="..\ServerWeb\Controllers" />
+    <ProjectReference Include="..\ServerWeb\ServerWeb.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -17,8 +17,16 @@ namespace ServerWeb.BLL.Models
 
         public int UserId { get; set; }
         [ForeignKey("UserId")]
+
+        public int AuthorId { get; set; }  
+        [ForeignKey("AuthorId")]
         public User Author { get; set; }
 
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
+
+        public Post()
+        {
+            CreatedAt = DateTime.Now;
+        }
     }
 }
