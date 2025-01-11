@@ -13,7 +13,7 @@ using System.ComponentModel.DataAnnotations;
 using ServerWeb.DAL.Context;
 
 
-namespace YourSocialMedia.Controllers
+namespace ServerWeb.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
