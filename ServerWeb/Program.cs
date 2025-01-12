@@ -37,7 +37,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins",
         builder =>
         {
-            builder.WithOrigins("http://localhost:3000")  // Порт сервера
+            builder.WithOrigins("http://localhost:7090", "https://localhost:7090")  // Порт сервера
                    .AllowAnyMethod()
                    .AllowAnyHeader();
         });
